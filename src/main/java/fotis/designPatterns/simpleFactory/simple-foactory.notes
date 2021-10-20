@@ -1,0 +1,4 @@
+	- Simple Factory Pattern(Kind of) notes - 
+1. Simple factory can use other design patterns to construct objects.
+ex. java.text.NumberFormat
+2. Just an encapsulation of the object instantiation ina separate method.
