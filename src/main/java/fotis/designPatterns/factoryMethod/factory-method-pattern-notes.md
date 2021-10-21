@@ -8,7 +8,7 @@ ex. *java.util.AbstractCollection<E>* contains a creator for Interface *Iterator
 
 --- 
 
-#### Pitfalls
+### Pitfalls
 
 1. More complex to implement. More classes involved and need unit testing.
 1. We have to start with Factory Method from the beginning. It's not easy to refactor existing code into factory method pattern.
