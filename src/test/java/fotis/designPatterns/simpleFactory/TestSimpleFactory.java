@@ -1,26 +1,32 @@
 package fotis.designPatterns.simpleFactory;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 /**
  * Test class for {@link SimpleFactory}
  */
-@SuppressWarnings({ "javadoc", "nls" })
 public class TestSimpleFactory {
 
+	/**
+	 * Test creation of class {@link Bow}
+	 */
 	@Test
-	public void test() {
-		Foo f1 = SimpleFactory.createFoo("A");
-		assertTrue(f1 instanceof FooImplA);
-		Foo f2 = SimpleFactory.createFoo("B");
-		assertTrue(f2 instanceof FooImplB);
+	public void test_bow() {
+		Weapon bow = SimpleFactory.createWeapon(WeaponType.BOW);
+		assertTrue(bow instanceof Bow);
+		assertEquals(Bow.ATTACK, bow.attack());
 	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void test_bad_input() {
-		SimpleFactory.createFoo("ABC");
+	
+	/**
+	 * Test creation of class {@link MagicStaff}
+	 */
+	@Test
+	public void test_staff() {
+		Weapon staff = SimpleFactory.createWeapon(WeaponType.MAGICWAND);
+		assertTrue(staff instanceof MagicStaff);
+		assertEquals(MagicStaff.ATTACK, staff.attack());
 	}
 
 }

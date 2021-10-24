@@ -3,18 +3,11 @@ package fotis.designPatterns.simpleFactory;
 /**
  * Simple Factory implementation.
  */
-@SuppressWarnings({ "javadoc", "nls" })
+@SuppressWarnings("javadoc")
 class SimpleFactory {
 
-	static Foo createFoo(String type) {
-		switch (type) {
-		case "A":
-			return new FooImplA();
-		case "B":
-			return new FooImplB();
-		default:
-			throw new IllegalArgumentException("Foo type is unknown");
-		}
+	static Weapon createWeapon(WeaponType type) {
+		return type.getConstructor().get();
 	}
 
 }
