@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 /**
  * Enum that represents the types of {@link Weapon}s that are supported.
  */
-public enum WeaponType {
+enum WeaponType {
 	/** Supported classes */
 	BOW(Bow::new),
 	
