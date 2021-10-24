@@ -23,5 +23,13 @@ public class TestBuilder {
 		assertEquals(b, p.getB());
 		assertEquals(c, p.getC());
 	}
+	
+	/**
+	 * Test thrown exception for bad initialization.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void test_bad_init() {
+		new Product.Builder(null).build();
+	}
 
 }

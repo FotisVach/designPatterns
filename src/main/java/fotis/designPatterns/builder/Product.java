@@ -90,6 +90,9 @@ class Product {
 		 * @param theRequired
 		 */
 		Builder(String theRequired) {
+			if (theRequired == null) {
+				throw new IllegalArgumentException("theRequired Property can not be null"); //$NON-NLS-1$
+			}
 			this.aRequired = theRequired;
 		}
 
