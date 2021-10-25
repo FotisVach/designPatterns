@@ -11,6 +11,9 @@ Just a repo with notes for Design Patterns
 1. Builder Pattern
 1. Simple Factory Pattern / Static Factory Method
 1. Factory Method Pattern
+1. Prototype Pattern
+1. Abstract Factory Pattern
+1. Singleton
 
 ---
 
