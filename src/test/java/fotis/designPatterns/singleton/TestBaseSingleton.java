@@ -1,17 +1,17 @@
 package fotis.designPatterns.singleton;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.function.Supplier;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>
@@ -55,34 +55,33 @@ public abstract class TestBaseSingleton<S> {
 
 	/**
 	 * Test singleton instance in a concurrent setting
-	 * 
-	 * @throws InterruptedException
-	 * @throws ExecutionException
 	 */
-	@Test(timeout = 10000)
-	public void testMultipleThreads()
-			throws InterruptedException, ExecutionException {
+	@Test
+	public void testMultipleThreads() {
+		assertTimeout(Duration.ofMillis(10000), () -> {
+			// Create 10000 tasks and inside each callable instantiate the
+			// singleton
+			// class
+			final List<Callable<S>> tasks = new ArrayList<>();
+			for (int i = 0; i < 10000; i++) {
+				tasks.add(this.singletonGetInstanceMethod::get);
+			}
 
-		// Create 10000 tasks and inside each callable instantiate the singleton class
-		final List<Callable<S>> tasks = new ArrayList<>();
-		for (int i = 0; i < 10000; i++) {
-			tasks.add(this.singletonGetInstanceMethod::get);
-		}
+			// Use up to 8 concurrent threads to handle the tasks
+			final ExecutorService executorService = Executors.newFixedThreadPool(8);
+			final List<Future<S>> results = executorService.invokeAll(tasks);
 
-		// Use up to 8 concurrent threads to handle the tasks
-		final ExecutorService executorService = Executors.newFixedThreadPool(8);
-		final List<Future<S>> results = executorService.invokeAll(tasks);
+			// Wait for all of the threads to complete
+			final S expectedInstance = this.singletonGetInstanceMethod.get();
+			for (Future<S> res : results) {
+				final S instance = res.get();
+				assertNotNull(instance);
+				assertSame(expectedInstance, instance);
+			}
 
-		// Wait for all of the threads to complete
-		final S expectedInstance = this.singletonGetInstanceMethod.get();
-		for (Future<S> res : results) {
-			final S instance = res.get();
-			assertNotNull(instance);
-			assertSame(expectedInstance, instance);
-		}
-
-		// Tidy up the executor
-		executorService.shutdown();
+			// Tidy up the executor
+			executorService.shutdown();
+		});
 
 	}
 

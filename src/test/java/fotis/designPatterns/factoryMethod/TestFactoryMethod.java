@@ -1,8 +1,8 @@
 package fotis.designPatterns.factoryMethod;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for Factory Method Pattern.
@@ -10,7 +10,8 @@ import org.junit.Test;
 public class TestFactoryMethod {
 
 	/**
-	 * Test proper creation by using {@link OrcWeaponCreator} implementation of the AbstractCreator.
+	 * Test proper creation by using {@link OrcWeaponCreator} implementation of
+	 * the AbstractCreator.
 	 */
 	@Test
 	public void test_OrcWeapon_creation() {
@@ -18,9 +19,10 @@ public class TestFactoryMethod {
 		assertTrue(orcWeapon instanceof OrcWeapon);
 		assertEquals(WeaponType.AXE, orcWeapon.getWeaponType());
 	}
-	
+
 	/**
-	 * Test proper creation by using {@link HumanWeaponCreator} implementation of the AbstractCreator.
+	 * Test proper creation by using {@link HumanWeaponCreator} implementation
+	 * of the AbstractCreator.
 	 */
 	@Test
 	public void test_HumanWeapon_creation() {
@@ -28,7 +30,7 @@ public class TestFactoryMethod {
 		assertTrue(humanWeapon instanceof HumanWeapon);
 		assertEquals(WeaponType.AXE, humanWeapon.getWeaponType());
 	}
-	
+
 	/**
 	 * Just a dummy method to test Creator Pattern.
 	 * 

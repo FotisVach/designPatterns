@@ -7,7 +7,7 @@
 ### Design Considerations
 
 1. Two options
-    1. Early initialization  - Eager Singleton: Create Singleton as soon as the class is  loaded.
+    1. Early initialization  - Eager Singleton: Create Singleton as soon as the class is loaded.
     1. Lazy initialization - Lazy Singleton: Create Singleton when it is first required.
 
 ### Consequences
@@ -16,4 +16,4 @@
 * Encourages using a globally shared instance which prevents an object and resources used by this object from being deallocated.
 * Creates tightly coupled code. The clients of the Singleton become difficult to test.
 * Makes it almost impossible to subclass a Singleton.
-
+* Need special consideration when we have i singleton in a web app that is deployed in several server instances.

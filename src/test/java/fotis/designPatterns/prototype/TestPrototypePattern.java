@@ -1,26 +1,26 @@
 package fotis.designPatterns.prototype;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * POC Client for {@link HeroFactory}
  */
-@SuppressWarnings({"nls", "javadoc"})
+@SuppressWarnings({ "nls", "javadoc" })
 public class TestPrototypePattern {
-	
+
 	private Float health = 1000f;
-	
+
 	private Float attack = 50f;
-	
+
 	private String meleeName = "Aragorn";
-	
+
 	private String rangeName = "Legolas";
-	
+
 	private MeleeFighterStatus meleeStatus = MeleeFighterStatus.DEFENDING;
-	
+
 	private RangeFighterStatus rangeStatus = RangeFighterStatus.RELOADING;
 
 	private HeroFactoryImpl meleeFactory;
@@ -30,7 +30,7 @@ public class TestPrototypePattern {
 	/**
 	 * Initialization
 	 */
-	@Before
+	@BeforeEach
 	public void setUpBeforeClass() {
 		meleeFactory = new HeroFactoryImpl(new Swordsman(health, meleeName, meleeStatus),
 				new UrukHai(health, attack, meleeStatus));
@@ -45,19 +45,19 @@ public class TestPrototypePattern {
 		assertEquals(meleeName, aragorn.getName());
 		assertEquals(meleeStatus, aragorn.getStatus());
 		aragorn.act();
-		
+
 		UrukHai urukHai = (UrukHai) meleeFactory.createOrc();
 		assertEquals(health, urukHai.getHealth());
 		assertEquals(attack, urukHai.getAttack());
 		assertEquals(meleeStatus, urukHai.getStatus());
 		urukHai.act();
-		
+
 		Archer legolas = (Archer) rangeFactory.createHuman();
 		assertEquals(health, legolas.getHealth());
 		assertEquals(rangeName, legolas.getName());
 		assertEquals(rangeStatus, legolas.getStatus());
 		legolas.act();
-		
+
 		Goblin goblin = (Goblin) rangeFactory.createOrc();
 		assertEquals(health, goblin.getHealth());
 		assertEquals(attack, goblin.getAttack());

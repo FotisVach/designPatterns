@@ -1,8 +1,8 @@
 package fotis.designPatterns.builder;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test method for Builder Pattern.
@@ -23,13 +23,13 @@ public class TestBuilder {
 		assertEquals(b, p.getB());
 		assertEquals(c, p.getC());
 	}
-	
+
 	/**
 	 * Test thrown exception for bad initialization.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void test_bad_init() {
-		new Product.Builder(null).build();
+		assertThrows(IllegalArgumentException.class, () -> new Product.Builder(null).build());
 	}
 
 }
