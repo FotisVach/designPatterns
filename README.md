@@ -4,7 +4,7 @@ Just a repo with notes for Design Patterns
 
 ---
 
-- [x] SOLID Principles
+- [x] SOLID Principles Notes
 
 ### Creational Design Patterns
 
@@ -14,6 +14,7 @@ Just a repo with notes for Design Patterns
 1. Prototype Pattern
 1. Abstract Factory Pattern
 1. Singleton
+1. Object Pool
 
 ---
 
