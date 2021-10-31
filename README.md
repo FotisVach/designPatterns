@@ -2,8 +2,6 @@
 
 Just a repo with notes for Design Patterns
 
----
-
 - [x] SOLID Principles Notes
 
 ### Creational Design Patterns
@@ -16,13 +14,11 @@ Just a repo with notes for Design Patterns
 1. Singleton
 1. Object Pool
 
----
-
 ### Structural Design Patterns
 
-1. TODO
+Structural Patterns deal with how classes and objects are arrenged or composed.
 
----
+1. Adapter
 
 ### Behavioral Design Patterns
 
