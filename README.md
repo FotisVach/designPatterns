@@ -19,6 +19,7 @@ Just a repo with notes for Design Patterns
 Structural Patterns deal with how classes and objects are arrenged or composed.
 
 1. Adapter
+2. Bridge
 
 ### Behavioral Design Patterns
 
