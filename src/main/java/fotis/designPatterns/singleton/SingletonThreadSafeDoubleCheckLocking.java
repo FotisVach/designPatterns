@@ -14,7 +14,10 @@ class SingletonThreadSafeDoubleCheckLocking {
 
 	/** Hide Constructor so nobody can instantiate this class */
 	private SingletonThreadSafeDoubleCheckLocking() {
-		// EMPTY
+		// Stop call by reflection
+		if (instance != null) {
+			throw new RuntimeException("User getInstance() method to create"); //$NON-NLS-1$
+		}
 	}
 
 	/**

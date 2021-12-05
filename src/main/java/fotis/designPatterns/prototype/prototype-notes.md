@@ -7,7 +7,7 @@
 ### Explanation
 
 * First, it should be noted that the Prototype pattern is not used to gain performance benefits. It's only used for creating new objects from prototype instances.
-*In short, it allows you to create a copy of an existing object and modify it to your needs, instead of going through the trouble of creating an object from scratch and setting it up.
+* In short, it allows you to create a copy of an existing object and modify it to your needs, instead of going through the trouble of creating an object from scratch and setting it up.
 
 ### Applicability
 

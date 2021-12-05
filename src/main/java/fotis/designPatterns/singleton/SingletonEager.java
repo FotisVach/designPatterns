@@ -22,7 +22,10 @@ class SingletonEager {
 
 	/** Hide Constructor so nobody can instantiate this class */
 	private SingletonEager() {
-		// EMPTY
+		// Stop call by reflection
+		if (INSTANCE != null) {
+			throw new RuntimeException("User getInstance() method to create"); //$NON-NLS-1$
+		}
 	}
 
 }
