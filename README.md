@@ -20,6 +20,7 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 
 1. Adapter
 2. Bridge
+3. Composite
 
 ### Behavioral Design Patterns
 

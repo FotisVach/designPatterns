@@ -17,8 +17,6 @@ Use the Composite pattern when:
 1. Goal of composite pattern is to simplify the client code by allowing it to treat the composites and leaf nodes in the same way.
 1. Composites will delegate the operations to its children while leaf nodes implement the functionality.
 
-ex. 
-
 ### Consequences
 
 1. Creating the original hierarchy can still be complex implementation  - especially if we use caching.
