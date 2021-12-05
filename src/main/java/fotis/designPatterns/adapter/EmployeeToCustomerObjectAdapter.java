@@ -3,7 +3,7 @@ package fotis.designPatterns.adapter;
 /**
  * An object adapter.
  * <p>
- * This way is considered a better design that a class adapter.
+ * This way is considered a better design than a class adapter.
  */
 class EmployeeToCustomerObjectAdapter implements Customer {
 
