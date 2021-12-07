@@ -22,6 +22,7 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 1. Bridge
 1. Composite
 1. Decorator
+1. Facade
 
 ### Behavioral Design Patterns
 
