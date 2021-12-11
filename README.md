@@ -28,4 +28,5 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 
 ### Behavioral Design Patterns
 
-1. TODO
+1. Chain of Responsibility
+
