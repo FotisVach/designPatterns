@@ -30,4 +30,4 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 
 1. Chain of Responsibility
 1. Command
-
+1. Interpreter
