@@ -35,3 +35,5 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 1. Mediator
 1. Memento
 1. Observer
+1. State
+
