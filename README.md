@@ -37,4 +37,4 @@ Structural Patterns deal with how classes and objects are arrenged or composed.
 1. Observer
 1. State
 1. Strategy
-
+1. Template
