@@ -1,6 +1,6 @@
 # Java Design Patterns :hammer_and_wrench: (WIP)
 
-Just a repo with notes for Design Patterns
+Just a repo with notes and examples for Design Patterns
 
 - [x] SOLID Principles Notes
 
