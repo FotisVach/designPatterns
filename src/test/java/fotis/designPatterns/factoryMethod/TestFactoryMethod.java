@@ -1,6 +1,7 @@
 package fotis.designPatterns.factoryMethod;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,36 +11,33 @@ import org.junit.jupiter.api.Test;
 public class TestFactoryMethod {
 
 	/**
-	 * Test proper creation by using {@link OrcWeaponCreator} implementation of
-	 * the AbstractCreator.
+	 * Test proper creation by using {@link WeaponFactory}
 	 */
 	@Test
 	public void test_OrcWeapon_creation() {
-		Weapon orcWeapon = createWeapon(new OrcWeaponCreator());
+		Weapon orcWeapon = WeaponFactory.create(OrcWeapon::new);
 		assertTrue(orcWeapon instanceof OrcWeapon);
-		assertEquals(WeaponType.AXE, orcWeapon.getWeaponType());
+		assertFalse(orcWeapon instanceof HumanWeapon);
+
+		WeaponFactory factory = OrcWeapon::new;
+		orcWeapon = factory.create();
+		assertTrue(orcWeapon instanceof OrcWeapon);
+		assertFalse(orcWeapon instanceof HumanWeapon);
 	}
 
 	/**
-	 * Test proper creation by using {@link HumanWeaponCreator} implementation
-	 * of the AbstractCreator.
+	 * Test proper creation by using {@link WeaponFactory}
 	 */
 	@Test
 	public void test_HumanWeapon_creation() {
-		Weapon humanWeapon = createWeapon(new HumanWeaponCreator());
+		Weapon humanWeapon = WeaponFactory.create(HumanWeapon::new);
 		assertTrue(humanWeapon instanceof HumanWeapon);
-		assertEquals(WeaponType.AXE, humanWeapon.getWeaponType());
-	}
-
-	/**
-	 * Just a dummy method to test Creator Pattern.
-	 * 
-	 * @param creator
-	 * @return a {@link Weapon}
-	 */
-	private Weapon createWeapon(WeaponCreator creator) {
-		WeaponType weaponType = WeaponType.AXE;
-		return creator.createWeapon(weaponType);
+		assertFalse(humanWeapon instanceof OrcWeapon);
+		
+		WeaponFactory factory = HumanWeapon::new;
+		humanWeapon = factory.create();
+		assertTrue(humanWeapon instanceof HumanWeapon);
+		assertFalse(humanWeapon instanceof OrcWeapon);
 	}
 
 }

@@ -8,15 +8,6 @@ class OrcWeapon implements Weapon {
 
 	private WeaponType weaponType;
 
-	/**
-	 * Creates a new OrcWeapon object.
-	 *
-	 * @param weaponType
-	 */
-	OrcWeapon(WeaponType weaponType) {
-		this.weaponType = weaponType;
-	}
-
 	@Override
 	public WeaponType getWeaponType() {
 		return this.weaponType;
