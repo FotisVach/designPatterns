@@ -1,7 +1,7 @@
 package fotis.designPatterns.observer;
 
 /**
- * Observer class of Observer Paatern.
+ * Observer class of Observer Pattern.
  */
 @SuppressWarnings("javadoc")
 abstract class Observer {
